@@ -1,5 +1,4 @@
 ﻿using BotBase.Modules.ConfigCommand;
-using DibariBot.Modules.ConfigCommand;
 
 namespace BotBase.Examples.TodoList.Modules.ConfigCommand.Pages;
 

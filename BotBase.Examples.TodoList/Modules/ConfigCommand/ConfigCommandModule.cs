@@ -17,10 +17,8 @@ public class ConfigCommandModule : ConfigCommandModuleBase<ConfigPage.Page>
     [RequireContext(ContextType.DM | ContextType.Group, Group = BaseModulePrefixes.PERMISSION_GROUP)]
     [HasOverride(Group = BaseModulePrefixes.PERMISSION_GROUP)]
     [EnabledInDm(true)]
-    public async Task ConfigSlash()
+    public override Task ConfigSlash()
     {
-        await DeferAsync();
-
-        await FollowupAsync(await configService.GetMessageContents(new(), Context));
+        return base.ConfigSlash();
     }
 }

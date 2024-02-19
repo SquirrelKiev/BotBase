@@ -31,10 +31,7 @@ public abstract class AboutModuleImpl : BotModule
         }
     }
 
-    [SlashCommand("about", "Info about the bot.")]
-    [HelpPageDescription("Pulls up info about the bot.")]
-    [EnabledInDm(true)]
-    public async Task AboutSlash()
+    public virtual async Task AboutSlash()
     {
         await DeferAsync();
 

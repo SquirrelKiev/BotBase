@@ -6,9 +6,6 @@ namespace BotBase;
 
 public abstract class BotConfigBase
 {
-    [YamlMember(Description = "DON'T CHANGE!")]
-    public abstract int Version { get; set; }
-
     [YamlMember(Description = @"Your bot token from https://discord.com/developers/applications. Don't share!")]
     public abstract string BotToken { get; set; }
 

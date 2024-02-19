@@ -1,11 +1,11 @@
 ﻿using System.Reflection;
 using BotBase.Database;
 using BotBase.Examples.TodoList.Database;
+using BotBase.Examples.TodoList.Modules.ConfigCommand;
 using BotBase.Examples.TodoList.Modules.ConfigCommand.Pages;
 using BotBase.Modules.About;
 using BotBase.Modules.ConfigCommand;
 using BotBase.Modules.Help;
-using DibariBot.Modules.ConfigCommand;
 using Discord;
 using Discord.Commands;
 using Discord.Interactions;

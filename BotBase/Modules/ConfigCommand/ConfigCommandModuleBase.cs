@@ -13,6 +13,13 @@ public abstract class ConfigCommandModuleBase<T> : BotModule where T : Enum
         this.configService = configService;
     }
 
+    public virtual async Task ConfigSlash()
+    {
+        await DeferAsync();
+
+        await FollowupAsync(await configService.GetMessageContents(new(), Context));
+    }
+
     [ComponentInteraction(BaseModulePrefixes.CONFIG_PAGE_SELECT_PAGE)]
     [RequireUserPermission(GuildPermission.ManageGuild, Group = BaseModulePrefixes.PERMISSION_GROUP)]
     [HasOverride(Group = BaseModulePrefixes.PERMISSION_GROUP)]

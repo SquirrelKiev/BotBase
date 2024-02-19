@@ -14,7 +14,7 @@ public class AboutPrefixModule : PrefixModule
 
     [Command("about")]
     [ParentModulePrefix(typeof(AboutModule))]
-    public async Task AboutSlash()
+    public async Task AboutCommand()
     {
         await DeferAsync();
 
