@@ -17,14 +17,24 @@ public struct MessageContents
         this.components = components?.Build();
     }
 
-    public MessageContents(string body, Embed? embed, ComponentBuilder? components)
+    public MessageContents(string body = "", Embed? embed = null, ComponentBuilder? components = null)
     {
         this.body = body;
         embeds = embed == null ? null : new[] { embed };
 
         components ??= new ComponentBuilder().WithRedButton();
 
-        this.components = components?.Build();
+        this.components = components.Build();
+    }
+
+    public MessageContents(EmbedBuilder embed, ComponentBuilder? components = null, string body = "")
+    {
+        this.body = body;
+        embeds = new[] { embed.Build() };
+
+        components ??= new ComponentBuilder().WithRedButton();
+
+        this.components = components.Build();
     }
 
     public MessageContents SetEmbed(Embed embed)
