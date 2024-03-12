@@ -2,7 +2,6 @@
 
 public class BotConfig : BotConfigBase
 {
-    public override int Version { get; set; } = 1;
     public override string BotToken { get; set; } = "BOT_TOKEN_HERE";
     public override CacheType Cache { get; set; } = CacheType.Memory;
     public override DatabaseType Database { get; set; } = DatabaseType.Sqlite;
