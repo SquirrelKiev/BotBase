@@ -1,4 +1,5 @@
-﻿using Discord.Interactions;
+﻿using Discord;
+using Discord.Interactions;
 
 namespace BotBase.Modules.About;
 
@@ -14,7 +15,6 @@ public abstract class AboutModuleImpl : BotModule
     }
 
     [ComponentInteraction(BaseModulePrefixes.ABOUT_OVERRIDE_TOGGLE)]
-    [EnabledInDm(true)]
     public async Task OverrideToggleButton()
     {
         await DeferAsync();
@@ -31,6 +31,7 @@ public abstract class AboutModuleImpl : BotModule
         }
     }
 
+    [CommandContextType(InteractionContextType.Guild, InteractionContextType.BotDm)]
     public virtual async Task AboutSlash()
     {
         await DeferAsync();
