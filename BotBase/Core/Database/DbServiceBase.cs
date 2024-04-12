@@ -3,7 +3,7 @@ using Serilog;
 
 namespace BotBase.Database;
 
-public abstract class DbServiceBase<T> where T : BotDbContextBase
+public abstract class DbServiceBase<T> where T : DbContext
 {
     protected readonly BotConfigBase botConfig;
 

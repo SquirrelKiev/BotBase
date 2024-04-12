@@ -7,7 +7,7 @@ using Discord.WebSocket;
 
 namespace BotBase
 {
-    public class DbCommandHandler<T> : CommandHandler where T : BotDbContextBase
+    public class DbCommandHandler<T> : CommandHandler where T : BotDbContextPrefixBase
     {
         protected readonly DbServiceBase<T> dbService;
 

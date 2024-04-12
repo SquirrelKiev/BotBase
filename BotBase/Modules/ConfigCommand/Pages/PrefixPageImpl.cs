@@ -12,7 +12,7 @@ public class SetPrefixModal : IModal
     public string Prefix { get; set; } = "";
 }
 
-public class PrefixPageImpl<TPageEnum,TDatabaseContext> where TPageEnum : Enum where TDatabaseContext : BotDbContextBase
+public class PrefixPageImpl<TPageEnum,TDatabaseContext> where TPageEnum : Enum where TDatabaseContext : BotDbContextPrefixBase
 {
     private readonly ConfigCommandServiceBase<TPageEnum> configCommandService;
     private readonly DbServiceBase<TDatabaseContext> dbService;

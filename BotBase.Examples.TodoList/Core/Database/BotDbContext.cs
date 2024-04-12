@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace BotBase.Examples.TodoList.Database;
 
-public abstract class BotDbContext : BotDbContextBase
+public abstract class BotDbContext : BotDbContextPrefixBase
 {
     public DbSet<TodoEntry> TodoEntries { get; set; }
 

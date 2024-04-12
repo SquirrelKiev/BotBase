@@ -1,6 +1,5 @@
 ﻿using BotBase;
 using BotBase.Examples.Barebones;
-using BotBase.Examples.Barebones.Core;
 using Serilog;
 using Serilog.Events;
 

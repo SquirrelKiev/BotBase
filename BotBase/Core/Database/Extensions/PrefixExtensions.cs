@@ -2,7 +2,7 @@
 
 public static class PrefixExtensions
 {
-    public static async Task SetPrefix<T>(this DbServiceBase<T> dbService, ulong guildId, string prefix) where T : BotDbContextBase
+    public static async Task SetPrefix<T>(this DbServiceBase<T> dbService, ulong guildId, string prefix) where T : BotDbContextPrefixBase
     {
         var dbContext = dbService.GetDbContext();
 
@@ -11,7 +11,7 @@ public static class PrefixExtensions
         await dbContext.SaveChangesAsync();
     }
 
-    public static async Task<string> GetPrefix<T>(this DbServiceBase<T> dbService, ulong guildId, string defaultPrefix) where T : BotDbContextBase
+    public static async Task<string> GetPrefix<T>(this DbServiceBase<T> dbService, ulong guildId, string defaultPrefix) where T : BotDbContextPrefixBase
     {
         var dbContext = dbService.GetDbContext();
 

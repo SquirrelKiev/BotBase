@@ -4,7 +4,7 @@ namespace BotBase;
 
 public static class ServiceCollectionExtensions
 {
-    public static ServiceCollection AddCache<T>(this ServiceCollection services, T config) where T : BotConfigBase
+    public static IServiceCollection AddCache<T>(this ServiceCollection services, T config) where T : BotConfigBase
     {
         switch (config.Cache)
         {
@@ -14,7 +14,7 @@ public static class ServiceCollectionExtensions
             default:
                 throw new NotSupportedException(config.Cache.ToString());
         }
-
+        
         return services;
     }
 }

@@ -6,7 +6,7 @@
 		<Nullable>enable</Nullable>
 		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
 		<PackageId>enonibobble.$(AssemblyName)</PackageId>
-		<VersionPrefix>1.1.1</VersionPrefix>
+		<VersionPrefix>2.0.1</VersionPrefix>
 		<Title>BotBase</Title>
 		<Authors>enonibobble</Authors>
 		<Description>A shared library for my Discord bots.</Description>
@@ -25,9 +25,9 @@
 		<PackageReference Include="Discord.Net.Interactions" Version="3.14.1" />
 		<PackageReference Include="Discord.Net.Rest" Version="3.14.1" />
 		<PackageReference Include="Discord.Net.WebSocket" Version="3.14.1" />
-		<PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.3" />
-		<PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="8.0.3" />
-		<PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="8.0.3">
+		<PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.4" />
+		<PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="8.0.4" />
+		<PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="8.0.4">
 			<PrivateAssets>all</PrivateAssets>
 			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
 		</PackageReference>

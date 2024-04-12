@@ -1,5 +1,4 @@
 ﻿using System.Reflection;
-using BotBase.Examples.Barebones.Core;
 using Discord;
 using Discord.Commands;
 using Discord.Interactions;

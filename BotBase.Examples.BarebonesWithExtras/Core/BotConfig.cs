@@ -16,7 +16,7 @@ public class BotConfig : BotConfigBase
     public override string SeqApiKey { get; set; } = "";
     public override string DefaultPrefix { get; set; } = "]";
     public override string AboutPageTitle { get; set; } = "About {{botUsername}}";
-    public override string AboutPageDescription { get; set; } = "An example to-do list bot.";
+    public override string AboutPageDescription { get; set; } = "A bot.";
 
     public override AboutField[] AboutPageFields { get; set; } = 
     {

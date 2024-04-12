@@ -4,6 +4,11 @@ namespace BotBase;
 
 public struct MessageContents
 {
+    /// <summary>
+    /// Whether the red close button should be added when no component builder is specified.
+    /// </summary>
+    public static bool AddRedButtonDefault = true;
+
     public string body;
     public Embed[]? embeds;
     public MessageComponent? components;
@@ -13,7 +18,8 @@ public struct MessageContents
         this.body = body;
         this.embeds = embeds;
 
-        components ??= new ComponentBuilder().WithRedButton();
+        if(AddRedButtonDefault)
+            components ??= new ComponentBuilder().WithRedButton();
         this.components = components?.Build();
     }
 
@@ -22,7 +28,8 @@ public struct MessageContents
         this.body = body;
         embeds = embed == null ? null : new[] { embed };
 
-        components ??= new ComponentBuilder().WithRedButton();
+        if (AddRedButtonDefault)
+            components ??= new ComponentBuilder().WithRedButton();
 
         this.components = components.Build();
     }
@@ -32,7 +39,8 @@ public struct MessageContents
         this.body = body;
         embeds = new[] { embed.Build() };
 
-        components ??= new ComponentBuilder().WithRedButton();
+        if (AddRedButtonDefault)
+            components ??= new ComponentBuilder().WithRedButton();
 
         this.components = components.Build();
     }

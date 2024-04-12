@@ -2,7 +2,7 @@
 
 namespace BotBase.Examples.BarebonesWithExtras.Database;
 
-public abstract class BotDbContext : BotDbContextBase
+public abstract class BotDbContext : BotDbContextPrefixBase
 {
     protected BotDbContext(string connectionString) : base(connectionString)
     {
