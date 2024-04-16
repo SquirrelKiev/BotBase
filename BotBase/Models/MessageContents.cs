@@ -18,7 +18,7 @@ public struct MessageContents
         this.body = body;
         this.embeds = embeds;
 
-        if(AddRedButtonDefault)
+        if (AddRedButtonDefault)
             components ??= new ComponentBuilder().WithRedButton();
         this.components = components?.Build();
     }
@@ -26,12 +26,13 @@ public struct MessageContents
     public MessageContents(string body = "", Embed? embed = null, ComponentBuilder? components = null)
     {
         this.body = body;
-        embeds = embed == null ? null : new[] { embed };
+        embeds = embed == null ? null : [embed];
 
         if (AddRedButtonDefault)
             components ??= new ComponentBuilder().WithRedButton();
 
-        this.components = components.Build();
+        if (components != null)
+            this.components = components.Build();
     }
 
     public MessageContents(EmbedBuilder embed, ComponentBuilder? components = null, string body = "")
@@ -42,7 +43,8 @@ public struct MessageContents
         if (AddRedButtonDefault)
             components ??= new ComponentBuilder().WithRedButton();
 
-        this.components = components.Build();
+        if (components != null)
+            this.components = components.Build();
     }
 
     public MessageContents SetEmbed(Embed embed)

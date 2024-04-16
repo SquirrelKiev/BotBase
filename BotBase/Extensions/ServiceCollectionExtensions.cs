@@ -4,7 +4,7 @@ namespace BotBase;
 
 public static class ServiceCollectionExtensions
 {
-    public static IServiceCollection AddCache<T>(this ServiceCollection services, T config) where T : BotConfigBase
+    public static IServiceCollection AddCache<T>(this IServiceCollection services, T config) where T : BotConfigBase
     {
         switch (config.Cache)
         {
