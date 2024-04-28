@@ -78,7 +78,7 @@ namespace BotBase
 
             if (res.IsSuccess)
             {
-                Log.Information("Command {ModuleName}.{MethodName} successfully executed. Message contents: {contents}",
+                Log.Debug("Command {ModuleName}.{MethodName} successfully executed. Message contents: {contents}",
                     cmdInfo?.Module.Name, cmdInfo?.Name, ctx.Message.CleanContent);
             }
             else
@@ -129,7 +129,7 @@ namespace BotBase
         {
             if (res.IsSuccess)
             {
-                Log.Information("Interaction {ModuleName}.{MethodName} successfully executed.", cmdInfo.Module.Name, cmdInfo.MethodName);
+                Log.Debug("Interaction {ModuleName}.{MethodName} successfully executed.", cmdInfo.Module.Name, cmdInfo.MethodName);
             }
             else
             {

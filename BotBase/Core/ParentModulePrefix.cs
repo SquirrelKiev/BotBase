@@ -3,12 +3,7 @@
 namespace BotBase;
 
 [AttributeUsage(AttributeTargets.Method)]
-public sealed class ParentModulePrefixAttribute : Attribute
+public sealed class ParentModulePrefixAttribute(Type parentModule) : Attribute
 {
-    public ParentModulePrefixAttribute(Type parentModule)
-    {
-        ParentModule = parentModule;
-    }
-
-    public Type ParentModule { get; }
+    public Type ParentModule { get; } = parentModule;
 }

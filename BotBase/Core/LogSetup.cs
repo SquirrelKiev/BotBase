@@ -7,13 +7,13 @@ namespace BotBase;
 
 public static class LogSetup
 {
-    public static void SetupLogger(BotConfigBase config, LogEventLevel consoleLogLevel = LogEventLevel.Information)
+    public static void SetupLogger(BotConfigBase config, LogEventLevel logLevel = LogEventLevel.Information)
     {
         var logConfig = new LoggerConfiguration()
-            .MinimumLevel.Verbose()
+            .MinimumLevel.Is(logLevel)
             .Enrich.FromLogContext()
             .WriteTo.Console(
-            consoleLogLevel,
+            logLevel,
             theme: AnsiConsoleTheme.Literate)
             ;
 
