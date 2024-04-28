@@ -4,14 +4,10 @@ using Discord.Interactions;
 namespace BotBase.Modules.ConfigCommand;
 
 /// <typeparam name="T">T should be an enum containing every page. 0 should ALWAYS be "Help", and will be used to show info about the config options.</typeparam>
-public abstract class ConfigCommandModuleBase<T> : BotModule where T : Enum
+public abstract class ConfigCommandModuleBase<T>(ConfigCommandServiceBase<T> configService) : BotModule
+    where T : Enum
 {
-    protected readonly ConfigCommandServiceBase<T> configService;
-
-    protected ConfigCommandModuleBase(ConfigCommandServiceBase<T> configService)
-    {
-        this.configService = configService;
-    }
+    protected readonly ConfigCommandServiceBase<T> configService = configService;
 
     public virtual async Task ConfigSlash()
     {
@@ -21,8 +17,6 @@ public abstract class ConfigCommandModuleBase<T> : BotModule where T : Enum
     }
 
     [ComponentInteraction(BaseModulePrefixes.CONFIG_PAGE_SELECT_PAGE)]
-    [RequireUserPermission(GuildPermission.ManageGuild, Group = BaseModulePrefixes.PERMISSION_GROUP)]
-    [HasOverride(Group = BaseModulePrefixes.PERMISSION_GROUP)]
     public async Task SelectInteraction(string id)
     {
         await DeferAsync();
@@ -33,8 +27,6 @@ public abstract class ConfigCommandModuleBase<T> : BotModule where T : Enum
     }
 
     [ComponentInteraction(BaseModulePrefixes.CONFIG_PAGE_SELECT_PAGE_BUTTON + "*")]
-    [RequireUserPermission(GuildPermission.ManageGuild, Group = BaseModulePrefixes.PERMISSION_GROUP)]
-    [HasOverride(Group = BaseModulePrefixes.PERMISSION_GROUP)]
     public Task SelectInteractionButton(string id)
     {
         return SelectInteraction(id);
