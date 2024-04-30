@@ -14,13 +14,13 @@ public abstract class PrefixModule : ModuleBase<SocketCommandContext>
 
     protected Task DeferAsync() => Context.Channel.TriggerTypingAsync();
 
-    protected virtual IMessageChannel GetParentChannel()
+    protected virtual IChannel GetParentChannel()
     {
-        var channel = Context.Channel;
+        IChannel channel = Context.Channel;
 
         if (Context.Channel is SocketThreadChannel thread)
         {
-            channel = (ISocketMessageChannel)thread.ParentChannel;
+            channel = thread.ParentChannel;
         }
 
         return channel;

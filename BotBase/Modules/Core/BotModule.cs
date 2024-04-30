@@ -21,13 +21,13 @@ public abstract class BotModule : InteractionModuleBase
         return Context.Interaction.ModifyOriginalResponseAsync(contents, options);
     }
 
-    protected virtual IMessageChannel GetParentChannel()
+    protected virtual IChannel GetParentChannel()
     {
-        var channel = Context.Channel;
+        IChannel channel = Context.Channel;
 
         if (Context.Channel is SocketThreadChannel thread)
         {
-            channel = (IMessageChannel)thread.ParentChannel;
+            channel = thread.ParentChannel;
         }
 
         return channel;
