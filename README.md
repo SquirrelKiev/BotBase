@@ -1,3 +1,5 @@
+# Been slowly migrating away from this, turns out you modify this stuff a lot more than expected. Who'd've thought.
+
 # BotBase
 
 A shared library for my Discord bots.
